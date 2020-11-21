@@ -1,0 +1,13 @@
+<h1>This is todo app</h1>
+<ul>
+	{% for each_item in itemalls %}
+		<li>{{ each_item.myname }}{{ each_item.last_n }}</l1>
+
+	{% endfor %}
+</ul>
+
+<form action="/addTodo/" method="post">{% csrf_token %}
+	<input type="text" name="first_name"/>
+	<input type="text" name="last_name"/>
+	<input type="submit" value="Add"/>
+</form>
