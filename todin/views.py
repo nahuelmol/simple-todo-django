@@ -4,7 +4,8 @@ from .models import itemModel
 
 def seeing_view(request):
 	all_items = itemModel.objects.all() 
-	return render(request,'todo.html', {'itemalls': all_items})
+	context = {'itemalls': all_items}
+	return render(request,'todo.html',context)
 
 
 def adding_data(request):
