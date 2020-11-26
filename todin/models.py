@@ -1,5 +1,8 @@
 from django.db import models
 
 class itemModel(models.Model):
-	myname = models.TextField()
-	last_n = models.TextField()
+	first_name = models.TextField()
+	last_name = models.TextField()
+	age = models.IntegerField(default=0)
+	username = models.TextField()
+	post = models.TextField()

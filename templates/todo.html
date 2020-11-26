@@ -1,14 +1,77 @@
-<h1>This is todo app</h1>
-<ul>
-	{% for each_item in itemalls %}
-		<li>{{ each_item.myname }}{{ each_item.last_n }}</l1>
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="https://bootswatch.com/4/yeti/bootstrap.min.css">
+</head>
+<body class="bg-dark">
 
-	{% endfor %}
-</ul>
+<div class="container text-center">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<a href="#" class="btn btn-outline-danger">Hi!</a>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+</div>
+<div class="container ">
+	<div class="row">
+		<div class="col-md-6 text-danger" >
+			<h2>Put your data</h2>
+			<form action="/addTodo/" method="post">{% csrf_token %}
+				<br>
+				<input type="text" class="form-control form-control-lg" name="first_name"/>
+				<br>
+				<input type="text" class="form-control form-control-lg" name="last_name"/>
+				<br>
+				<input type="text" class="form-control form-control-lg" name="age"/>
+				<br>
+				<input type="text" class="form-control form-control-lg" name="user"/>
+				<br>
+				<input type="text" class="form-control form-control-lg" name="post"/>
+				<br>
+				<input type="submit" value="Add"/>
+				<br>
+			</form>
+		</div>
+		<div class="col-md-6 text-danger" >
+			<h2>There is the data from database</h2>
+			{% for each_item in itemalls %}
+				<p>{{ each_item.first_name }}{{ each_item.last_name }}</p>
+				<p>{{ each_item.age }}{{ each_item.username }}{{ each_item.post }}</p>
+			{% endfor %}
+		</div>
+	</div>
+</div>
 
-<form action="/addTodo/" method="post">{% csrf_token %}
-	<input type="text" name="first_name"/>
-	<input type="text" name="last_name"/>
-	<input type="submit" value="Add"/>
-</form>
+
 <a href="/init/">Back to init page</a>
+</body>
+</html>
